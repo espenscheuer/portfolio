@@ -4,7 +4,7 @@ import '../App.css';
 function Mountains() {
 
     return (
-        <img className = 'mountains' src={require('../img/mountains.svg')} alt ='mountains' />
+        <img className = 'mountains' src={('/img/mountains.svg')} alt ='mountains' />
     )
 }
 

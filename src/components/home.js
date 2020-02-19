@@ -4,7 +4,6 @@ import '../App.css';
 import {Link} from 'react-router-dom'
 
 function Home() {
-
     return (
       <div className="page">
         <div className = 'name-wrap'>
@@ -15,15 +14,16 @@ function Home() {
                 Product Manager
             </p>
         </div>
+        <div className = "bubble-wrap"> <div className = "bubble"></div> </div>
         </div>
             <Mountains/>
         <div className = 'content'>
             <div className = 'work'>
             <p className = 'work-title'>
-                Selected Work
+                Selected <br></br> Work
             </p>
             <div className = "work-wrap">
-                <img className = 'work-image' src={require('../img/madrona.png')} alt ='work'/>
+                <img className = 'work-image' src={('/img/madrona.png')} alt ='work'/>
                 <div className = 'work-titles'>
                     <div className = 'work-title'>
                         <p className = 'work-category'> PRODUCT MANAGEMENT </p>
