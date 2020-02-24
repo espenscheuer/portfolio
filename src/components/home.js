@@ -1,9 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Mountains from './mountains.js';
 import '../App.css';
 import {Link} from 'react-router-dom'
 
 function Home() {
+    const [bubbles, setBubbles] = useState([])
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+    useEffect(() => {
+        const interval = setInterval(() => {
+          setBubbles([...bubbles, {}])
+        }, 1000)
+        return () => clearInterval(interval)
+      }, [])
+
     return (
       <div className="page">
         <div className = 'name-wrap'>
@@ -14,9 +26,10 @@ function Home() {
                 Product Manager
             </p>
         </div>
-        <div className = "bubble-wrap"> <div className = "bubble"></div> </div>
         </div>
-            <Mountains/>
+        {bubbles.map(()=> <div className = "bubble-wrap"> <div className = "bubble"></div> </div>)}
+
+        <Mountains/>
         <div className = 'content'>
             <div className = 'work'>
             <p className = 'work-title'>
