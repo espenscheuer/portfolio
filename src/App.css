@@ -197,6 +197,12 @@ html{
   margin-bottom: 80px;
 }
 
+.work-header{
+  color: var(--lightColor);
+  font-family: 'Overpass', sans-serif;
+  font-size: 1.25rem;
+}
+
 .work-title{
   color: var(--lightColor);
   font-family: 'Overpass', sans-serif;
@@ -213,10 +219,39 @@ html{
   align-items: left;
   justify-content: space-between;
 }
-
+.image-wrap{
+  position:relative;
+}
 .work-image {
-  height: 50vh;
-  width: 50vh;
+  position: absolute;
+  max-width: 30vw;
+  max-height: 70vh;
+}
+
+.work-image[state="0"] {
+  transform: rotate(-15deg);
+  transform-origin: bottom right;
+  transition: transform .25s linear;
+
+}
+.work-image[state="1"] {
+  transform: rotate(-10deg);
+  transform-origin: bottom right;
+  transition: transform .25s linear;
+
+
+
+}
+.work-image[state="2"] {
+  transform: rotate(-5deg);
+  transform-origin: bottom right;
+  transition: transform .25s linear;
+
+  
+}
+.work-image[state="3"] {
+  transform: rotate(0);
+
 }
 
 .work-titles {
@@ -225,28 +260,23 @@ html{
   text-align: left;
   justify-content: space-between;
   height: 80vh;
+  color: var(--lightColor);
+}
+.work-title:hover{
+  color: var(--secondColor);
 }
 
 .work-category{
-  color:var(--lightColor);
   margin-block-start: 0px;
   font-size: .75rem;
   font-family: 'Overpass', sans-serif;
 }
 
-.work-category:hover {
-  animation-name: slide;
-}
-
 .work-link {
-  color:var(--lightColor);
+  color: var(--lightColor);
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
   text-decoration: none;
-}
-
-.work-link:hover {
-  background-size: 4px 50px;
 }
 
 @keyframes slide {
