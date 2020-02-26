@@ -51,7 +51,7 @@ function Home() {
         </div>
         {bubbles.map((item, index) => {
             if(index >=  (bubbles.length - 20)) {
-                return (<Bubble style = {{transition: "10s", transform: "translate(0px, 100px)", marginLeft: ((item - 50) +"vw")}}/>)
+                return (<Bubble style = {{transition: "10s", transform: "translate(0px, 100px)", marginLeft: ((50 + item) +"%")}}/>)
             }
 
         })}
