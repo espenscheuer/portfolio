@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import Mountains from './mountains.js';
+import Bubble from './bubble.js';
 import '../App.css';
+import { Parallax } from 'react-scroll-parallax';
 import {Link} from 'react-router-dom'
 
 function Home() {
-    const [bubbles, setBubbles] = useState([])
+    const [bubbles, setBubbles] = useState([(getRandomInt(100) - 50)])
     const [zscores, setZscores] = useState([3,2,1,0])
     const [top, setTop] = useState(0)
     function getRandomInt(max) {
@@ -21,11 +23,18 @@ function Home() {
             setZscores(temp)
         }
     }
-
+    
     useEffect(() => {
         const interval = setInterval(() => {
-          setBubbles([...bubbles, {}])
-        }, 1000)
+            
+            setBubbles(current => {
+                console.log(current)
+                let temp = [...current]
+                temp.push(getRandomInt(100))
+                console.log(temp)
+                return temp
+            })
+        }, 2000)
         return () => clearInterval(interval)
       }, [])
 
@@ -40,9 +49,16 @@ function Home() {
             </p>
         </div>
         </div>
-        {bubbles.map(()=> <div className = "bubble-wrap"> <div className = "bubble"></div> </div>)}
+        {bubbles.map((item, index) => {
+            if(index >=  (bubbles.length - 20)) {
+                return (<Bubble style = {{transition: "10s", transform: "translate(0px, 100px)", marginLeft: ((item - 50) +"vw")}}/>)
+            }
 
-        <Mountains/>
+        })}
+        <Parallax  x={[-10, 10]} tagOuter="figure">
+            <Mountains/>
+        </Parallax>
+
         <div className = 'content'>
             <div className = 'work'>
             <p className = 'work-header'>
@@ -77,7 +93,9 @@ function Home() {
         </div>
         </div>
         <div className = 'flipped'>
-            <Mountains/>
+            <Parallax x={[10, -10]} tagOuter="figure">
+                <Mountains/>
+            </Parallax>
         </div>
       </div>
     )

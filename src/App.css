@@ -11,6 +11,7 @@ html{
   text-align: center;
   background-color: var(--lightColor);
   display:flex;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -24,22 +25,29 @@ html{
 
 .App-footer {
   background-color: var(--lightColor);
-  height: 10vh;
+  height: 5vh;
+  align-items: center;
 }
-
 .left {
   margin-top: 40px;
+  height : 10vh;
   margin-left :60px;
   margin-bottom: 40px;
   position: absolute;
+  display:flex;
+  align-items: center;
   left: 0;
 }
 
 .right {
   margin-top: 40px;
   margin-bottom: 40px;
+    height : 10vh;
+
   margin-right:60px;
   direction: rtl;
+  display:flex;
+  align-items: center;
   position: absolute;
   white-space: nowrap;
   right: 0;
@@ -53,7 +61,6 @@ html{
   text-decoration: none;
   font-family: 'Overpass', sans-serif;
   height: 4px;
-
   font-size: .8rem;
   color: var(--mainColor);
 }
@@ -102,6 +109,7 @@ html{
 
 .link-wrap {
   position: relative;
+  padding-bottom: 6px ;
 }
 
 .link, .link:visited {
@@ -173,8 +181,8 @@ html{
 }
 
 .mountains {
-  margin-bottom: -10px;
-  margin-left: -30px;
+  margin-bottom: -30px;
+  margin-left: -400px;
   width: 300vw;
   display:block;
   z-index: 1;
@@ -193,8 +201,9 @@ html{
   flex-direction: column  ;
   text-align: left;
   width: 65vw;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-left: 60px;
+  margin-top: 90px;
+  margin-bottom: 150px;
 }
 
 .work-header{
@@ -205,8 +214,13 @@ html{
 
 .work-title{
   color: var(--lightColor);
-  font-family: 'Overpass', sans-serif;
-  font-size: 1.25rem;
+  transition: all .4s;
+}
+
+
+.work-title a{
+  color: var(--lightColor);
+  transition: all .4s;
 }
 
 @keyframes slide {
@@ -263,7 +277,12 @@ html{
   color: var(--lightColor);
 }
 .work-title:hover{
-  color: var(--secondColor);
+  color: #B89EA3;
+  transform: translateX(-10px);
+}
+
+.work-title:hover a{
+  color: #B89EA3;
 }
 
 .work-category{
@@ -284,21 +303,47 @@ html{
   to   { transform : translateY(-45em) } 
 }
 
+.bubble-wrap {
+  animation: moveBubble 60s both;
+  position:fixed;
+  z-index: 0;
+
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.1);
+  }
+}
+
+@keyframes moveBubble {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100px);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-75vh, -100vh);
+  }
+}
+
 .bubble {
-  display:inline-block;
+  animation: pulse 50s infinite;
+  z-index: 0;
   background-color:transparent;
   border-radius: 50%; 
   border: 1.5px solid var(--mainColor);
   width :20px;
   height: 20px;
-  margin-top: 60px;
-  position: absolute;
-  animation-name: drift;
-  animation-duration: 50s;
-
-}
-
-@keyframes drift {
-  from { transform : translateY(0em); scale: 1; }
-  to   { transform : translateY(-45em); scale: .1; } 
+  margin-top: 70vh;
+  left: 50vw;
+  position: relative;
 }

@@ -6,9 +6,11 @@ function Footer() {
     return (
         <header className="App-footer">
           <div className = 'left'>
+          
                 <div className = 'tag'>  
                     BUILT IN REACT
                 </div>
+           
             </div>
             <div className = 'right'>
                 <div className = "footer-link"> 
