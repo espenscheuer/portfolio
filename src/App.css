@@ -11,13 +11,14 @@ html{
   text-align: center;
   background-color: var(--lightColor);
   display:flex;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
 .App-header {
   display:flex;
-
+  justify-content: space-between;
   flex-direction: row;
   background-color: var(--lightColor);
   height: 10vh;
@@ -26,12 +27,21 @@ html{
 .App-footer {
   background-color: var(--lightColor);
   height: 5vh;
+  color: var(--mainColor);
+  display:flex;
+  width: 90vw;
+  font-family: 'Overpass', sans-serif;
+  height: 4px;
+  font-size: .8rem;
   align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 5vh 5vh;
 }
 .left {
   margin-top: 40px;
   height : 10vh;
-  margin-left :60px;
+  margin-left :5vw;
   margin-bottom: 40px;
   position: absolute;
   display:flex;
@@ -44,7 +54,7 @@ html{
   margin-bottom: 40px;
     height : 10vh;
 
-  margin-right:60px;
+  margin-right:5vw;
   direction: rtl;
   display:flex;
   align-items: center;
@@ -109,7 +119,7 @@ html{
 
 .link-wrap {
   position: relative;
-  padding-bottom: 6px ;
+  margin-left: 20px;
 }
 
 .link, .link:visited {
@@ -152,8 +162,7 @@ html{
 .footer-link {
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
-  width:18vh;
+  direction: rtl;
 }
 .page {
   display:flex;
@@ -307,7 +316,6 @@ html{
   animation: moveBubble 60s both;
   position:fixed;
   z-index: 0;
-
 }
 
 @keyframes pulse {
