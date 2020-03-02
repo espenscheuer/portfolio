@@ -55,10 +55,14 @@ function Home() {
             }
 
         })}
+        <div className = "mountain1">
         <Parallax  x={[-10, 10]} tagOuter="figure">
             <Mountains/>
         </Parallax>
-
+        </div>
+        <div className = 'mountain2'> 
+        <Mountains/>
+        </div>
         <div className = 'content'>
             <div className = 'work'>
             <p className = 'work-header'>
@@ -73,29 +77,54 @@ function Home() {
                 </div>
                 <div className = 'work-titles'>
                     <div className = 'work-title' onMouseEnter={() => mouseEnter(0)}>
+                    <Link className = 'work-link' to ='/madrona'>
+                    <img className = 'work-image2' src={('/img/one.png')} alt ='work'/>
+                    </Link>
+                        <div className= "work-title2">
                         <p className = 'work-category'> PRODUCT MANAGEMENT </p>
                         <Link className = 'work-link' to ='/madrona'>Madrona Venture Labs</Link>
+                        </div>
                     </div>
                     <div className = 'work-title' onMouseEnter={() => mouseEnter(1)}>
+                    <Link className = 'work-link' to ='/workday'>
+                    <img className = 'work-image2' src={('/img/two.png')} alt ='work'/>
+                    </Link>
+                        <div className= "work-title2">
                         <p className = 'work-category'> PRODUCT MANAGEMENT </p>
                         <Link className = 'work-link' to ='/workday'>Workday Mobile Team</Link>
+                        </div>
                     </div>
                     <div className = 'work-title' onMouseEnter={() => mouseEnter(2)}>
+                    <Link className = 'work-link' to ='/mobility'>
+                    <img className = 'work-image2' src={('/img/three.png')} alt ='work'/>
+                    </Link>
+                        <div className= "work-title2">
                         <p className = 'work-category'> BACK END DEVELOPMENT </p>
                         <Link className = 'work-link' to ='/mobility'>Mobility Innovation Center</Link>
+                        </div>
                     </div>
                     <div className = 'work-title' onMouseEnter={() => mouseEnter(3)}>
+                    <Link className = 'work-link' to ='/nomadic'>
+                    <img className = 'work-image2' src={('/img/four.png')} alt ='work'/>
+                    </Link>
+                        <div className= "work-title2">
                         <p className = 'work-category'> PRODUCT MANAGEMENT </p>
                         <Link className = 'work-link' to ='/nomadic'>Nomadic</Link>
+                        </div>
                     </div>
                 </div>
             </div> 
         </div>
         </div>
         <div className = 'flipped'>
+            <div className = "mountain1">
             <Parallax x={[10, -10]} tagOuter="figure">
                 <Mountains/>
             </Parallax>
+            </div>
+            <div className = 'mountain2'> 
+            <Mountains/>
+            </div>
         </div>
       </div>
     )

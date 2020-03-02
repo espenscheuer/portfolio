@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 import '../App.css';
 
 import {Link, useLocation} from 'react-router-dom'
 
+
 function Header(props) {
+    const [menu, setMenu] = useState(false)
     const location = useLocation();
     console.log(location.pathname)
-
     return (
         <header className="App-header"> 
             <div className = 'left'>

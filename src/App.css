@@ -2,9 +2,10 @@ html{
   font-size: 18px;
   background-color: var(--lightColor);
   overflow-x: hidden;
-  --mainColor: #364156; /*#296852*/
-  --secondColor: #7D4E57; /* */
-  --lightColor: #F1F0EC; /*#F7F3F0 */
+  --mainColor: #364156; 
+  --secondColor: #7D4E57; 
+  --lightColor: #F1F0EC; 
+  --bubbleColor: #364156
 
 }
 .App {
@@ -52,7 +53,7 @@ html{
 .right {
   margin-top: 40px;
   margin-bottom: 40px;
-    height : 10vh;
+  height : 10vh;
 
   margin-right:5vw;
   direction: rtl;
@@ -182,7 +183,7 @@ html{
   position:fixed;
   z-index: 0;
   color:var(--mainColor);
-  font-size: 4.5rem;
+  font-size: 4rem;
 }
 
 .flipped {
@@ -207,9 +208,8 @@ html{
 
 .work {
   display: flex;
-  flex-direction: column  ;
+  flex-direction: column ;
   text-align: left;
-  width: 65vw;
   margin-left: 60px;
   margin-top: 90px;
   margin-bottom: 150px;
@@ -219,6 +219,7 @@ html{
   color: var(--lightColor);
   font-family: 'Overpass', sans-serif;
   font-size: 1.25rem;
+  margin-bottom: 100px;
 }
 
 .work-title{
@@ -240,6 +241,7 @@ html{
   display:flex;
   flex-direction: row;
   align-items: left;
+  width: 65vw;
   justify-content: space-between;
 }
 .image-wrap{
@@ -290,6 +292,10 @@ html{
   transform: translateX(-10px);
 }
 
+
+.work-image2{
+  display:none;
+}
 .work-title:hover a{
   color: #B89EA3;
 }
@@ -348,10 +354,182 @@ html{
   z-index: 0;
   background-color:transparent;
   border-radius: 50%; 
-  border: 1.5px solid var(--mainColor);
+  border: 1.5px solid var(--bubbleColor);
   width :20px;
   height: 20px;
   margin-top: 70vh;
   left: 50vw;
   position: relative;
 }
+
+.mountain2{
+  display:none;
+}
+
+.mountain1{
+  display:block;
+}
+
+.hamburger{
+  display:none;
+}
+   
+@media (max-width: 1100px){
+
+  .App-header{
+    height:5vh;
+  }
+
+  .left{
+    height: 30px;
+  }
+
+  .right{
+    height: 30px;
+  }
+
+  .name-wrap {
+    height: 38vh;
+  }
+
+  .work-title{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width:80vw;
+    justify-content: space-between;
+  }
+
+  .work {
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+  .mountains{
+    width: 900vw;
+  }
+
+  .work-wrap {
+    flex-direction: row-reverse;
+    width: 80vw;
+  }
+   .work-titles {
+     height: 90vh;
+     justify-content: space-evenly;
+   }
+   .work-link{
+     font-size: 2rem;
+   }
+   .work-image2 {
+     display: block;
+     position:relative;
+     object-fit: cover;
+     width:200px;
+     height:200px;
+   }
+
+   .work-title{
+     width: 80vw;
+   }
+.work-header{
+  margin-bottom: 0px;
+}
+
+  image-wrap{
+    display: none;
+  }
+
+  .work-image{
+    display: none;
+  }
+  .mountain1{
+      display:none;
+    }
+
+    .mountain2{
+      display:block;
+    }
+}
+
+  @media (max-width: 500px){
+
+    .hamburger{
+      display:block;
+      margin-right: 20px;
+    }
+    .name{
+      font-size: 2.6rem;
+    }
+    
+    .mountain1{
+      display:none;
+    }
+
+    .mountain2{
+      display:block;
+    }
+    .work-wrap{
+      align-items: center;
+      justify-content: center;
+    }
+
+    .work-title{
+      display:flex;
+      flex-direction: column;
+      align-items:baseline; 
+    }
+  
+    .work-titles{
+      justify-content: space-evenly;
+      height: 250vh;
+    }
+    .image-wrap{
+      display: none;
+    }
+    .name-wrap {
+      height: 65vh;
+    }
+    .mountains{
+      width: 2000vw;
+      margin-left: 100px;
+    }
+  
+    .work-image2{
+      display: block;
+      position: relative;
+      object-fit: cover;
+       width:80vw;
+       height:80vw;
+       margin-bottom: 30px;
+    }
+   
+    .work-link {
+      font-size: 1.5rem;
+    }
+    .work{
+      margin-bottom: 50px;
+    }
+    
+    .bubble{
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--bubbleColor);
+    }
+  
+    .header-wrap{
+      display:none;
+    }
+
+    .App-footer{
+      display: none;
+    }
+    .mountain1{
+      display:none;
+    }
+
+    .mountain2{
+      display:block;
+    }
+
+}
+  
+  
