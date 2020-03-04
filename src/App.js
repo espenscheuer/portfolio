@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react'
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Header from './components/header.js'
 import Home from './components/home.js'

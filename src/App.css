@@ -1,3 +1,13 @@
+html, body, #root{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  overflow: hidden ;
+}
+
 html{
   font-size: 18px;
   background-color: var(--lightColor);
@@ -11,10 +21,12 @@ html{
 .App {
   text-align: center;
   background-color: var(--lightColor);
-  display:flex;
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .App-header {
@@ -22,12 +34,13 @@ html{
   justify-content: space-between;
   flex-direction: row;
   background-color: var(--lightColor);
-  height: 10vh;
+  min-height: 10vh;
+  min-width: 100% ;
 }
 
 .App-footer {
   background-color: var(--lightColor);
-  height: 5vh;
+  min-height: 5vh;
   color: var(--mainColor);
   display:flex;
   width: 90vw;
@@ -167,6 +180,7 @@ html{
 }
 .page {
   display:flex;
+  width: 100vw;
   flex-direction: column;
   background-color: var(--lightColor);
 }
@@ -180,14 +194,52 @@ html{
 
 .name {
   font-family: 'Cormorant Garamond', serif;
-  position:fixed;
+  position:absolute;
   z-index: 0;
   color:var(--mainColor);
   font-size: 4rem;
+  pointer-events: none;
+
 }
 
 .flipped {
   transform: rotate(180deg);
+}
+
+
+.menu-link-wrap{
+  display:flex;
+  flex-direction: column;
+  margin-top: 60px;
+  height:100vh;
+  font-size: 4rem;
+  align-items: center;
+}
+
+.menu-link{
+  color: var(--lightColor);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  text-decoration: none;
+  margin: 0px;
+  margin-top: 50px;
+}
+
+.menu-footer{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 40vw;
+  margin-top: 200px;
+  height: 90vh;
+  align-items: center;
+}
+
+.mf-link{
+  color: var(--lightColor);
+  font-family: 'Overpass', sans-serif;
+  font-size: .75rem;
+  text-decoration: none;
 }
 
 .mountains {
@@ -373,6 +425,26 @@ html{
 .hamburger{
   display:none;
 }
+
+
+.hamburger2{
+  display:none;
+}
+
+.menu{
+  display: none;
+  position: fixed;
+  height:100vh;
+  background-color:var(--mainColor );
+  width:100vw;
+  z-index: 1000;
+  left:100vw;
+  top:0;
+  bottom:0;
+  right:0;
+  transition: .75s;
+  overflow: hidden;
+}
    
 @media (max-width: 1100px){
 
@@ -401,7 +473,7 @@ html{
   }
 
   .work {
-    margin-bottom: 0px;
+    margin-bottom: 50px;
     margin-left: 0px;
   }
   .mountains{
@@ -447,14 +519,40 @@ html{
 
     .mountain2{
       display:block;
+      z-index: 1;
+    }
+
+    .bubble{
+      margin-top: 75vh;
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--bubbleColor);
+    }
+
+    .App-footer{
+      min-height: 30vh;
     }
 }
 
   @media (max-width: 500px){
 
+    .menu{
+      display:block;
+    }
+
     .hamburger{
       display:block;
-      margin-right: 20px;
+      margin-right: 10px;
+      padding-bottom: 30px;
+    }
+
+    .hamburger2{
+      display:block;
+      right:0;
+      top:0;
+      position: absolute;
+      margin-right: 38px;
+      margin-top: 32px;
     }
     .name{
       font-size: 2.6rem;
@@ -466,6 +564,7 @@ html{
 
     .mountain2{
       display:block;
+      margin-left: -5000px;
     }
     .work-wrap{
       align-items: center;

@@ -6,7 +6,7 @@ import { Parallax } from 'react-scroll-parallax';
 import {Link} from 'react-router-dom'
 
 function Home() {
-    const [bubbles, setBubbles] = useState([(getRandomInt(100) - 50)])
+    const [bubbles, setBubbles] = useState([(getRandomInt(100))])
     const [zscores, setZscores] = useState([3,2,1,0])
     const [top, setTop] = useState(0)
     function getRandomInt(max) {
@@ -51,7 +51,7 @@ function Home() {
         </div>
         {bubbles.map((item, index) => {
             if(index >=  (bubbles.length - 20)) {
-                return (<Bubble style = {{transition: "10s", transform: "translate(0px, 100px)", marginLeft: ((50 + item) +"%")}}/>)
+                return (<Bubble style = {{transition: "10s", transform: "translate(0px, 100px)", marginLeft: ((item - 50) +"%")}}/>)
             }
 
         })}
