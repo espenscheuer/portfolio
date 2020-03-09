@@ -95,11 +95,28 @@ html{
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0%;
+  width: 100%;
+  z-index:1;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("/img/underline.svg");
   transition: 0.3s;
+}
+
+.header-link::before{
+  content:'';
+  width:100%;
+  height: 5px;
+  transition:.3s;
+  position: absolute;
+  bottom:0;
+  right: 0;
+  z-index: 2;
+  background-color: var(--lightColor);
+}
+
+.header-link:hover::before{
+  width: 0%;
 }
 .header-link:hover:after, .header-link:visited:hover:after {
   width: 100%;
@@ -131,6 +148,10 @@ html{
   background-image: url("/img/underline.svg");
 }
 
+
+.header-link[page="fixed"]::before, .header-link[page="fixed"]:visited::before {
+  width:0%;
+}
 .link-wrap {
   position: relative;
   margin-left: 20px;
@@ -150,7 +171,7 @@ html{
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0%;
+  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("/img/underline.svg");
@@ -161,6 +182,21 @@ html{
   height:4px;
 }
 
+.link::before{
+  content:'';
+  width:100%;
+  height: 5px;
+  transition:.3s;
+  position: absolute;
+  bottom:0;
+  right: 0;
+  z-index: 2;
+  background-color: var(--lightColor);
+}
+
+.link:hover::before{
+  width: 0%;
+}
 
 .link.block, .link:visited.block {
   display: block;
@@ -341,6 +377,16 @@ html{
 }
 .work-title:hover{
   color: #B89EA3;
+  transform: translateX(-5px);
+}
+
+.work-title:hover a{
+  color: #B89EA3;
+  transform: translateX(-5px);
+}
+
+.work-title:hover .work-category{
+  color: #B89EA3;
   transform: translateX(-10px);
 }
 
@@ -348,13 +394,12 @@ html{
 .work-image2{
   display:none;
 }
-.work-title:hover a{
-  color: #B89EA3;
-}
+
 
 .work-category{
   margin-block-start: 0px;
   font-size: .75rem;
+  transition: .5s;
   font-family: 'Overpass', sans-serif;
 }
 
@@ -409,7 +454,7 @@ html{
   border: 1.5px solid var(--bubbleColor);
   width :20px;
   height: 20px;
-  margin-top: 70vh;
+  margin-top: 60vh;
   left: 50vw;
   position: relative;
 }
@@ -446,6 +491,12 @@ html{
   overflow: hidden;
 }
    
+@media (max-width: 1300px){
+  .work-link{
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 1100px){
 
   .App-header{
